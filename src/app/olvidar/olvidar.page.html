@@ -1,0 +1,21 @@
+
+
+<ion-content [fullscreen]="true">
+  <div>
+    <h1>Se le enviará un correo para recuperar su contraseña</h1>
+    <ion-list>
+      <ion-item>
+        <ion-input label="Correo" type="email" placeholder="Ingrese su correo"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-button id="present-alert" expand="block"[routerLink]="['/login']">Enviar correo</ion-button>
+        <ion-alert
+          trigger="present-alert"
+          header="El correo ha sido enviado"
+          [buttons]="alertButtons"
+          (didDismiss)="setResult($event)"
+        ></ion-alert>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

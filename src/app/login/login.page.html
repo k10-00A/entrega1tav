@@ -1,0 +1,29 @@
+
+
+<ion-content [fullscreen]="true">
+  <div>
+    <h1>Ingrese sus Datos</h1>
+    <ion-list>
+      <ion-item>
+        <ion-input class="email" label="Correo" type="email" placeholder="Ingrese su correo" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input class="password"  label="Contraseña" type="password" value=". . ." > </ion-input> 
+      </ion-item>
+      <ion-item>
+        <ion-button expand="block" click="buscarUsuario()">Ingresar</ion-button>
+      </ion-item>
+      <ion-item>
+        <p>Aún no tienes cuenta? Crea Una   </p>
+        <ion-button expand="block" routerLink="/registrar">Crear Cuenta</ion-button>
+      </ion-item>
+    </ion-list>
+    <div *ngIf="mensajeError" class="error-message">
+      {{ mensajeError }}
+    </div>
+    <div>
+      <p></p>
+      <a [routerLink]="['/olvidar']">Olvidaste tu contraseña?</a>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,30 @@
+ion-list {
+    display:grid;                    
+    justify-content:center;          
+    align-items: center;              
+    height: 100%;    
+    margin-top: 1cm; 
+    background-color: #690961;  
+    border-radius:25px; 
+                
+}
+
+h1 {
+    display:grid;                    
+    justify-content:center;          
+    align-items: center;              
+    height: 100%;  
+    margin-top: 2cm;
+}
+a {
+    display:grid;                    
+    justify-content:center;          
+    align-items: center;              
+    height: 100%;  
+; 
+}
+
+.ion-button {
+  background-color: #f89af0 !important ;
+  color: beige !important;
+}   

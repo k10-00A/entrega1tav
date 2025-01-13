@@ -1,0 +1,32 @@
+
+
+<ion-content [fullscreen]="true">
+  <div>
+    <h1>Ingrese sus datos para crear una cuenta</h1>
+    <ion-list>
+      <ion-item>
+        <ion-input label="Nombre" type="text" [(ngModel)]="user.nombre" placeholder="Ingrese su Nombre"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input label="Correo" type="email"  [(ngModel)]="user.email" placeholder="Ingrese su Correo"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input label="Fecha de Nacimiento" type="date" placeholder="dd/mm/aaaa" [(ngModel)]="user.f_nacimiento"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-select label="Género"  [(ngModel)]="user.genero" placeholder="Seleccione su Género">
+          <ion-select-option value="Femenino">Femenino</ion-select-option>
+          <ion-select-option value="Masculino">Masculino</ion-select-option>
+          <ion-select-option value="No Binario">No Binario</ion-select-option>
+          <ion-select-option value="Otro">Prefiero no responder</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-input label="Contraseña"  type="password"  value="" [(ngModel)]="user.password" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-button id="present-alert" expand="block" (click)="registrar()" [routerLink]="['/login']">Registrarse</ion-button>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
