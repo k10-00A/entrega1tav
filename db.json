@@ -1,0 +1,151 @@
+{
+  "usuario": [
+    {
+      "id": "1",
+      "nombre": "Camila",
+      "email": "prueba@duocuc.cl",
+      "password": "123",
+      "f_nacimiento": "2004-01-08",
+      "genero": "F",
+      "telefono": 11111111
+    },
+    {
+      "id": "2",
+      "nombre": "Jonas",
+      "email": "prueba2@duocuc.cl",
+      "password": "1234",
+      "f_nacimiento": "1999-10-01",
+      "genero": "M",
+      "telefono": 22222222
+    },
+    {
+      "id": "2802",
+      "nombre": "asda",
+      "email": "asdsa@gmail.com",
+      "password": "12312",
+      "f_nacimiento": "2025-01-17",
+      "genero": "Masculino"
+    },
+    {
+      "id": "ad7b",
+      "nombre": "Camila",
+      "email": "cam.retamala@duocuc.cl",
+      "password": "666",
+      "f_nacimiento": "2004-01-08",
+      "genero": "Femenino"
+    },
+    {
+      "id": "0846",
+      "nombre": "Jonas",
+      "email": "jon.valenzuelal@duocuc.cl",
+      "password": "777",
+      "f_nacimiento": "1999-10-01",
+      "genero": "Masculino"
+    },
+    {
+      "id": "d8e7",
+      "nombre": "bryan",
+      "email": "bryan@duocuc.cl",
+      "password": "1234",
+      "f_nacimiento": "2025-01-01",
+      "genero": "Masculino"
+    },
+    {
+      "id": "e324",
+      "nombre": "bacanazo",
+      "email": "bacanazo@bacan.com",
+      "password": "123",
+      "f_nacimiento": "2025-01-07",
+      "genero": "No Binario"
+    },
+    {
+      "id": "86a6",
+      "nombre": "burrojona",
+      "email": "bu.ro@gmail.com",
+      "password": "1111",
+      "f_nacimiento": "2024-12-31",
+      "genero": "No Binario"
+    },
+    {
+      "id": "7a79",
+      "nombre": "Baby J",
+      "email": "baby.j@duocuc.cl",
+      "password": "babyj123",
+      "f_nacimiento": "2004-01-08",
+      "genero": "Masculino"
+    }
+  ],
+  "categorias": [
+    {
+      "id": 1,
+      "nombre": "Alimentos"
+    },
+    {
+      "id": 2,
+      "nombre": "Ropa"
+    }
+  ],
+  "gastos": [
+    {
+      "id": 1,
+      "categoriaId": 1,
+      "monto": 30000,
+      "fecha": "2024-01-17",
+      "descripcion": "Compra supermercado",
+      "tipo": "debito"
+    },
+    {
+      "id": 1737444388493,
+      "categoriaId": 1,
+      "monto": 29990,
+      "fecha": "2025-01-20",
+      "descripcion": "Handroll",
+      "tipo": "debito",
+      "cuotas": 0,
+      "pagos": []
+    },
+    {
+      "id": 1737444458285,
+      "categoriaId": 1,
+      "monto": 50990,
+      "fecha": "2025-01-16",
+      "descripcion": "Tocador Falabella",
+      "tipo": "debito",
+      "cuotas": 0,
+      "pagos": []
+    },
+    {
+      "id": 1737450527378,
+      "categoriaId": 2,
+      "monto": 19990,
+      "fecha": "2025-01-02",
+      "descripcion": "Short americano verde",
+      "tipo": "debito",
+      "cuotas": 0,
+      "pagos": []
+    },
+    {
+      "id": 1737451457628,
+      "categoriaId": 2,
+      "monto": 30000,
+      "fecha": "2025-01-15",
+      "descripcion": "Botas",
+      "tipo": "credito",
+      "cuotas": 3,
+      "pagos": [
+        {
+          "monto": 10000,
+          "fecha": "2025-01-14"
+        },
+        {
+          "monto": 10000,
+          "fecha": "2025-02-14"
+        },
+        {
+          "monto": 10000,
+          "fecha": "2025-03-14"
+        }
+      ]
+    }
+  ]
+}

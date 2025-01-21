@@ -40,45 +40,52 @@
     </ion-toolbar>
   </ion-header>
 
-  <form>
-    <ion-item>
+  <form (ngSubmit)="onSubmit()" #form="ngForm">
+    
+    <ion-item [class.invalid]="!budgetName && form.submitted">
       <ion-label position="floating">Nombre del presupuesto</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]="budgetName" name="budgetName" required></ion-input>
     </ion-item>
 
-    <ion-item>
+    
+    <ion-item [class.invalid]="!amount && form.submitted">
       <ion-label position="floating">Monto</ion-label>
-      <ion-input type="number"></ion-input>
+      <ion-input type="number" [(ngModel)]="amount" name="amount" required></ion-input>
     </ion-item>
 
-    <ion-item>
+  
+    <ion-item [class.invalid]="!date && form.submitted">
       <ion-label position="floating">Fecha</ion-label>
-      <ion-datetime display-format="DD/MM/YYYY"></ion-datetime>
+      <ion-datetime display-format="DD/MM/YYYY" [(ngModel)]="date" name="date" required></ion-datetime>
     </ion-item>
 
-    <ion-item>
+    
+    <ion-item [class.invalid]="!category && form.submitted">
       <ion-label position="floating">Categoría</ion-label>
-      <ion-select interface="popover">
+      <ion-select interface="popover" [(ngModel)]="category" name="category" required>
         <ion-select-option value="categoria1">Comida</ion-select-option>
         <ion-select-option value="categoria2">Servicios básicos</ion-select-option>
         <ion-select-option value="categoria3">Ropa</ion-select-option>
       </ion-select>
     </ion-item>
 
+   
     <ion-item>
-      <ion-label position="floating">Agregar fotos</ion-label>
-      <ion-button>Seleccionar Imagen</ion-button>
+      <ion-label position="floating">Agregar foto</ion-label>
+      <ion-button (click)="fileInput.click()">Seleccionar Imagen</ion-button>
+      <input #fileInput type="file" (change)="onSelectImage($event)" style="display:none"/>
     </ion-item>
 
-    <ion-item>
+    
+    <ion-item [class.invalid]="!paymentMethod && form.submitted">
       <ion-label position="floating">Forma de pago</ion-label>
-      <ion-select interface="popover">
-        <ion-select-option value="efectivo">Efectivo</ion-select-option>
-        <ion-select-option value="tarjeta">Tarjeta</ion-select-option>
-        <ion-select-option value="transferencia">Transferencia</ion-select-option>
+      <ion-select interface="popover" [(ngModel)]="paymentMethod" name="paymentMethod" required>
+        <ion-select-option value="debito">Débito</ion-select-option>
+        <ion-select-option value="credito">Crédito</ion-select-option>
       </ion-select>
     </ion-item>
 
-    <ion-button expand="full">Enviar</ion-button>
+   
+    <ion-button expand="full" type="submit" [disabled]="form.invalid">Enviar</ion-button>
   </form>
 </ion-content>

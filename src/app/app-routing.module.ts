@@ -34,6 +34,24 @@ const routes: Routes = [
     path: 'inicio', 
     loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule)
   },
+  {
+    path: 'not-found',
+    loadChildren: () => import('./not-found/not-found.module').then( m => m.NotFoundPageModule)
+  },
+
+  {
+    path: 'registro-gasto',
+    loadChildren: () => import('./registro-gasto/registro-gasto.module').then( m => m.RegistroGastoPageModule)
+  },
+  {
+    path: 'gastos',
+    loadChildren: () => import('./gastos/gastos.module').then( m => m.GastosPageModule)
+  },
+  {
+    path: '**',
+    redirectTo: 'not-found',
+    pathMatch: 'full'
+  }
 ];
 @NgModule({
   imports: [

@@ -7,7 +7,7 @@ import { HttpClient, HttpHeaders ,HttpErrorResponse} from '@angular/common/http'
 export class UsuarioService {
 
   
-  apiUrl = 'https://cea40787-eef5-43ae-bc19-6ab28917eac8-00-vzq7vd38xk4p.kirk.replit.dev';
+  apiUrl = 'http://localhost:3000';
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
@@ -22,10 +22,23 @@ export class UsuarioService {
     return this.http.post(`${this.apiUrl}/usuario`, user, this.httpOptions);
   }
 
-  validarUsuario(email: string, password: any): Observable<any>  {
-  
-    const url = `${this.apiUrl}/validar-usuario?email=${email}&password=${password}`;
-    return this.http.get(url);
+  verificarEmailExistente(email: string) {
+    return this.http.get<boolean>(`${this.apiUrl}/usuario?email=${email}`);
+  }
+ 
+//  validarUsuario(email: string, password: any): Observable<any>  {
+//    const url = `${this.apiUrl}/usuario?email=${email}&password=${password}`;
+//    return this.http.get(url,this.httpOptions);
+//  }
+
+
+   obtenerUsuarios(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/usuario`, this.httpOptions);
+  }
+
+
+  validarUsuario(email: string, password: string): Observable<any> {
+    return this.obtenerUsuarios(); 
   }
 
 }

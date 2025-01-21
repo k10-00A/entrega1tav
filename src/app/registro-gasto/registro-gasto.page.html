@@ -1,0 +1,82 @@
+<ion-menu side="start" menuId="first" contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menú</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <ion-item button routerLink="/inicio">
+        <ion-icon name="home" slot="start"></ion-icon>
+        <ion-label>Inicio</ion-label>
+      </ion-item>
+      <ion-item button routerLink="/presu">
+        <ion-icon name="person-add" slot="start"></ion-icon>
+        <ion-label>Registrar presupuesto</ion-label>
+      </ion-item>
+      <ion-item button routerLink="/gastos">
+        <ion-icon name="person-add" slot="start"></ion-icon>
+        <ion-label>Ver</ion-label>
+      </ion-item>
+      <ion-item button (click)="logout()">
+        <ion-icon name="log-out" slot="start"></ion-icon>
+        <ion-label>Cerrar sesión</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button routerLink="/inicio">
+        <ion-icon slot="icon-only" name="home"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Registrar Presupuesto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content>
+  <ion-item>
+    <ion-label>Categoría</ion-label>
+    <ion-select [(ngModel)]="categoriaId" name="categoriaId" required>
+      <ion-select-option *ngFor="let categoria of categorias" [value]="categoria.id">
+        {{ categoria.nombre }}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Monto</ion-label>
+    <ion-input type="number" [(ngModel)]="monto"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Fecha</ion-label>
+    <ion-input type="date" [(ngModel)]="fecha"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Descripción</ion-label>
+    <ion-input [(ngModel)]="descripcion"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Tipo</ion-label>
+    <ion-select [(ngModel)]="tipo">
+      <ion-select-option value="debito">Débito</ion-select-option>
+      <ion-select-option value="credito">Crédito</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item *ngIf="tipo === 'credito'">
+    <ion-label position="floating">Cuotas</ion-label>
+    <ion-input [(ngModel)]="cuotas" *ngIf="tipo === 'credito'" type="number" placeholder="Número de cuotas"></ion-input>
+  </ion-item>
+
+  <ion-button expand="full" (click)="registrarGasto()">Registrar Gasto</ion-button>
+</ion-content>

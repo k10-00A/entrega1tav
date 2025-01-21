@@ -8,7 +8,17 @@ import { NavController } from '@ionic/angular';
 })
 export class InicioPage {
 
+
+  username: string = '';
+
   constructor(private router: Router, private navCtrl: NavController) {}
+  
+  ngOnInit() {
+    const user = JSON.parse(localStorage.getItem('currentUser')!);
+    if (user) {
+      this.username = user.nombre;
+    }
+  }
 
   logout() {
     
@@ -16,7 +26,6 @@ export class InicioPage {
     
     
     this.router.navigate(['/login']);
-    
- 
   }
+  
 }
