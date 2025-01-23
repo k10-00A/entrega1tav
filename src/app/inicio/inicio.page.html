@@ -41,9 +41,29 @@
   <div class="ion-text-center">
     <p class="welcome-text">Bienvenido(a) a tus presupuestos</p>
     <p>Ingresa acá para registrar un nuevo gasto</p>
-    <ion-button expand="block" color="primary" routerLink="/registro-gasto">Generar Presupuesto</ion-button>
+    <ion-button size="small"  routerLink="/presupuestos">Crear presupuesto</ion-button>
 
     <p>Ingresa acá para ver tus gastos</p>
-    <ion-button expand="block" color="secondary" routerLink="/gastos">Ver gastos</ion-button>
+    <ion-button size="small"  routerLink="/gastos">Ver gastos</ion-button>
   </div>
+</ion-content>
+
+<ion-content>
+  <ion-title>Presupuestos creados</ion-title>
+  <ion-list *ngIf="presupuestos.length > 0; else noPresupuestos">
+    <ion-item *ngFor="let presupuesto of presupuestos">
+      <ion-label>
+        <h2>{{ presupuesto.nombre }}</h2>
+        <p>Fecha de inicio: {{ presupuesto.f_inicio | date }}</p>
+        <p>Fecha de corte: {{ presupuesto.f_corte | date }}</p>
+        <ion-button>Ver Presupuesto</ion-button>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ng-template #noPresupuestos>
+    <ion-item>
+      <ion-label>No hay presupuestos creados aún.</ion-label>
+    </ion-item>
+  </ng-template>
 </ion-content>

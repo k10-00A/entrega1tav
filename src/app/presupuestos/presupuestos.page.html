@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Crear presupuestos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h1>Ingrese sus Datos</h1>
+  <ion-list>  
+    <ion-item>
+      <ion-label position="floating">Nombre del presupuesto</ion-label>
+        <ion-input [(ngModel)]="nombre"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating">Fecha de inicio</ion-label>
+        <ion-input type="date" [(ngModel)]="f_inicio"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Fecha de corte</ion-label>
+      <ion-input type="date" [(ngModel)]="f_corte"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-button expand="block"[routerLink]="['/inicio']"  (click)="crearPresupuesto()">Crear</ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>
+

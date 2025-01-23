@@ -75,19 +75,33 @@
       "genero": "Masculino"
     }
   ],
+  "presupuestos": [
+    {
+      "id": "1",
+      "nombre": "Casa",
+      "f_inicio": "2025-01-14",
+      "f_corte": "2025-04-14"
+    },
+    {
+      "id": "ca94",
+      "nombre": "Cosas casita",
+      "f_inicio": "2025-01-21",
+      "f_corte": "2025-05-21"
+    }
+  ],
   "categorias": [
     {
-      "id": 1,
+      "id": "1",
       "nombre": "Alimentos"
     },
     {
-      "id": 2,
+      "id": "2",
       "nombre": "Ropa"
     }
   ],
   "gastos": [
     {
-      "id": 1,
+      "id": "1",
       "categoriaId": 1,
       "monto": 30000,
       "fecha": "2024-01-17",
@@ -95,7 +109,7 @@
       "tipo": "debito"
     },
     {
-      "id": 1737444388493,
+      "id": "1737444388493",
       "categoriaId": 1,
       "monto": 29990,
       "fecha": "2025-01-20",
@@ -105,7 +119,7 @@
       "pagos": []
     },
     {
-      "id": 1737444458285,
+      "id": "1737444458285",
       "categoriaId": 1,
       "monto": 50990,
       "fecha": "2025-01-16",
@@ -115,7 +129,7 @@
       "pagos": []
     },
     {
-      "id": 1737450527378,
+      "id": "1737450527378",
       "categoriaId": 2,
       "monto": 19990,
       "fecha": "2025-01-02",
@@ -125,7 +139,7 @@
       "pagos": []
     },
     {
-      "id": 1737451457628,
+      "id": "1737451457628",
       "categoriaId": 2,
       "monto": 30000,
       "fecha": "2025-01-15",
@@ -144,6 +158,29 @@
         {
           "monto": 10000,
           "fecha": "2025-03-14"
+        }
+      ]
+    },
+    {
+      "id": 1737458847510,
+      "categoriaId": "2",
+      "monto": 6990,
+      "fecha": "2025-01-03",
+      "descripcion": "top",
+      "tipo": "credito",
+      "cuotas": 3,
+      "pagos": [
+        {
+          "monto": 2330,
+          "fecha": "2025-01-02"
+        },
+        {
+          "monto": 2330,
+          "fecha": "2025-02-02"
+        },
+        {
+          "monto": 2330,
+          "fecha": "2025-03-02"
         }
       ]
     }

@@ -47,6 +47,11 @@ const routes: Routes = [
     path: 'gastos',
     loadChildren: () => import('./gastos/gastos.module').then( m => m.GastosPageModule)
   },
+  
+  {
+    path: 'presupuestos',
+    loadChildren: () => import('./presupuestos/presupuestos.module').then( m => m.PresupuestosPageModule)
+  },
   {
     path: '**',
     redirectTo: 'not-found',
